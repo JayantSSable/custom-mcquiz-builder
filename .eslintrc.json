@@ -1,31 +1,31 @@
 {
-    "parserOptions": {
-      "ecmaVersion": 8,
-      "ecmaFeatures": {
-        "experimentalObjectRestSpread": true,
-        "jsx": true
-      },
-      "sourceType": "module"
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "mocha": true,
+    "node": false
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-  
-    "plugins": [
-      "react"
-    ],
-  
-    "extends": [
-      "standard-jsx"
-    ],
-  
-    "rules": {
-      "react/jsx-no-bind": ["error", {
-        "allowArrowFunctions": true,
-        "allowBind": false,
-        "ignoreRefs": true
-      }],
-      "react/no-did-update-set-state": "error",
-      "react/no-unknown-property": "error",
-      "react/no-unused-prop-types": "error",
-      "react/prop-types": "error",
-      "react/react-in-jsx-scope": "error"
-    }
-  }
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-const-assign": "warn",
+    "no-this-before-super": "warn",
+    "no-undef": "warn",
+    "no-unreachable": "warn",
+    "no-unused-vars": "warn",
+    "constructor-super": "warn",
+    "valid-typeof": "warn"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ]
+}

@@ -23,7 +23,7 @@ class ShowTimer extends React.Component {
     render() {
         var elapsed = Math.round(this.state.elapsed / 100);
         var seconds = (elapsed / 10).toFixed(1);
-        return <p><b>{seconds} seconds</b></p>;
+        return <p><b><div id="timerPara">{seconds} </div> seconds</b></p>;
     }
 }
 
