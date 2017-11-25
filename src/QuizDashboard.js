@@ -9,7 +9,6 @@ const FormItem = Form.Item;
 require('antd/dist/antd.css');
 
 var quizData = require('./data.json'); // forward slashes will depend on the file location
-console.log(quizData);
 
 const RadioGroup = Radio.Group;
 
@@ -39,7 +38,6 @@ class GroupOfRadio extends React.Component {
     }
 
     onChange = (e) => {
-        console.log('radio checked', e.target.value, this.props.index);
         this.state.optionSelected[this.props.index] = e.target.value;
     }
 

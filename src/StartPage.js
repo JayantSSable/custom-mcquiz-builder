@@ -27,7 +27,6 @@ class StartPage extends React.Component {
     this.setState({ sapID: e.target.value })
   }
   render() {
-    console.log(this.state);
     return (
       <Form layout="inline" onSubmit={this.handleSubmit}>
         <FormItem>
