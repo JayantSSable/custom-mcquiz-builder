@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Form, Row, Col, Button, Icon, Radio } from 'antd';
+import { Form, Button, Icon, Radio } from 'antd';
+import { Link } from 'react-router-dom';
+import { Card, Col, Row } from 'antd';
 const FormItem = Form.Item;
 require('antd/dist/antd.css');
 
@@ -68,16 +70,20 @@ class QuizDashBoard extends React.Component {
     render() {
         return (
             <Form>
-                <div class="quiz-dashboard">
+                <div class="quiz-dashboard" style={{ background: '#ECECEC', padding: '30px' }}>
                     {
                         quizData.map((item, index) => (
                             <Row>
-                                <FormItem label={item.que}>
+                                <Card title={item.que}>
                                     {this.renderGroup(item, index)}
-                                </FormItem>
+                                </Card>
+                                <div class="separator" style={{ background: '#ECECEC', padding: '15px' }}/>
                             </Row>
                         ))
                     }
+                </div>
+                <div>
+                    <Link to="/leaderBoard">LeaderBoard</Link>
                 </div>
             </Form>
         );

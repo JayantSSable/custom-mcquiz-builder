@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter, Route } from "react-router-dom";
 import StartPage from "./StartPage";
 import QuizeDashboard from "./QuizDashboard";
+import LeaderBoard from "./LeaderBoard";
 class App extends Component {
   render() {
     return (
@@ -15,6 +16,7 @@ class App extends Component {
           <div>
             <Route path="/" exact component={StartPage} />
             <Route path="/quiz" exact component={QuizeDashboard} />
+            <Route path="/leaderBoard" exact component={LeaderBoard} />
           </div>
         </BrowserRouter>
       </div>

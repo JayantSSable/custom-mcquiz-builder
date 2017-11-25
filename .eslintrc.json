@@ -1,23 +1,31 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "node": true
-    },
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "sourceType": "module"
+      "ecmaVersion": 8,
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "jsx": true
+      },
+      "sourceType": "module"
     },
+  
+    "plugins": [
+      "react"
+    ],
+  
+    "extends": [
+      "standard-jsx"
+    ],
+  
     "rules": {
-        "no-const-assign": "warn",
-        "no-this-before-super": "warn",
-        "no-undef": "warn",
-        "no-unreachable": "warn",
-        "no-unused-vars": "warn",
-        "constructor-super": "warn",
-        "valid-typeof": "warn"
+      "react/jsx-no-bind": ["error", {
+        "allowArrowFunctions": true,
+        "allowBind": false,
+        "ignoreRefs": true
+      }],
+      "react/no-did-update-set-state": "error",
+      "react/no-unknown-property": "error",
+      "react/no-unused-prop-types": "error",
+      "react/prop-types": "error",
+      "react/react-in-jsx-scope": "error"
     }
-}
+  }
