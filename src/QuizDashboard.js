@@ -4,6 +4,7 @@ import './index.css';
 import { Form, Button, Icon, Radio } from 'antd';
 import { Link } from 'react-router-dom';
 import { Card, Col, Row } from 'antd';
+import ShowTimer from './Timer';
 const FormItem = Form.Item;
 require('antd/dist/antd.css');
 
@@ -40,10 +41,10 @@ class GroupOfRadio extends React.Component {
     onChange = (e) => {
         console.log('radio checked', e.target.value, this.props.index);
         this.state.optionSelected[this.props.index] = e.target.value;
-      }
+    }
 
     renderRadio(idx, item) {
-        return <SingleButton idx={idx} value={item}/>;
+        return <SingleButton idx={idx} value={item} />;
     }
 
     render() {
@@ -77,13 +78,21 @@ class QuizDashBoard extends React.Component {
                                 <Card title={item.que}>
                                     {this.renderGroup(item, index)}
                                 </Card>
-                                <div class="separator" style={{ background: '#ECECEC', padding: '15px' }}/>
+                                <div class="separator" style={{ background: '#ECECEC', padding: '15px' }} />
                             </Row>
                         ))
                     }
                 </div>
                 <div>
-                    <Link to="/leaderBoard">LeaderBoard</Link>
+                    <Row>
+                        <Col>
+                            <Link to="/leaderBoard">LeaderBoard</Link>
+                        </Col>
+                        <span className="ant-divider" />
+                        <Col>
+                            <ShowTimer start={Date.now()} />
+                        </Col>
+                    </Row>
                 </div>
             </Form>
         );

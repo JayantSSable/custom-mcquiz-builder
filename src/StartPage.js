@@ -7,23 +7,40 @@ require('antd/dist/antd.css');
 
 
 class StartPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state =
+      {
+        userName: '',
+        sapID: '',
+      }
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.history.push('/quiz');
   }
+  handleNameChange = (e) => {
+    this.setState({ userName: e.target.value })
+  }
+  handleIdChange = (e) => {
+    this.setState({ sapID: e.target.value })
+  }
   render() {
+    console.log(this.state);
     return (
       <Form layout="inline" onSubmit={this.handleSubmit}>
         <FormItem>
-          {<Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="Your Name" />}
+          {<Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} onChange={this.handleNameChange} value={this.state.userName} placeholder="Your Name" />}
         </FormItem>
         <FormItem>
-          {<Input prefix={<Icon type="name" style={{ fontSize: 13 }} />} type="user" placeholder="SAP ID" />}
+          {<Input prefix={<Icon type="idcard" style={{ fontSize: 13 }} />} type="user" placeholder="SAP ID" onChange={this.handleIdChange} value={this.state.sapID}/>}
         </FormItem>
         <FormItem>
           <Button
             type="primary"
             htmlType="submit"
+            disabled={!(this.state.sapID && this.state.userName)}
           >
             Proceed to Quiz
           </Button>
@@ -32,4 +49,4 @@ class StartPage extends React.Component {
     );
   }
 }
- export default StartPage;
+export default StartPage;

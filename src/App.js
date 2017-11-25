@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route } from "react-router-dom";
 import StartPage from "./StartPage";
@@ -9,9 +8,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Quiz Competition</h1>
-        </header>
+        <div>
+          <h1>Quiz Competition</h1>
+        </div>
         <BrowserRouter>
           <div>
             <Route path="/" exact component={StartPage} />
